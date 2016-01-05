@@ -1,15 +1,14 @@
-# Name of Your Project Here
+# Erdgeschoss
 
-## Design Specification
+## Input Based Choose Your Own Adventure
 
-The design specificaiton is a counterpart to the Functional Speciffication. Where a functional specification concerns itself
-with inputs and outputs from the program, or the *experience* of a user running the program, the design specification is concerned with decisions that the engineer and programmer must make during its creation.
+Tools: http://runpython.com and ggame
 
-The design specification should include information like:
+Language: Python 3
 
-* What tools or frameworks will you use to build the project (e.g. http://runpython.com or ggame)?
-* What language will you use for coding (usually Python 3)?
-* For every element of the Functional Specification, what code will need to be written to support it?
-* What data will be stored or manipulated by the program? How will it be encoded and organized?
-* Describe the logic and/or code behind every interaction with the user, and behind everything displayed.
-* If your program uses an unusual or notable *algorithm*, what is the algorithm and how does it work?
+Code:
+* A main while loop with function branches for each input.
+* Liberal use of "if" statements
+* Variables stored: User input, inventory, room inventory, character stats, etc.
+* Sets of information stored in lists
+* Seperate functions for descriptions and breaks
