@@ -1,3 +1,9 @@
+"""
+Author: Sarah Dunbar
+Project: Final Project
+Credit: Eric Dennison, Anoushka Alavilli (tester), Geoff Dunbar (tester)
+"""
+
 def Init():
     name = input ("Please select a name: ")
     age = input (name + ", how old are you? ")
