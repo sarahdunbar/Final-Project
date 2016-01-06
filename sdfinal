@@ -43,12 +43,13 @@ def Init():
                 ent = int(ent)
                 if ent < 0 or ent > 10:
                     print ("Don't be a novelty. Between zero and ten, please. ")
+                    print ("Of course, such behavior is typical for someone named " + name + "... I can hardly blame you, I guess.")
                 else: 
                     g = 1
             print (namre + " total: " + str(ent))
             num = num - ent
             if num < 0:
-                print ("Oh dear, you don't have enough attribute points for that! Please select again! ")
+                print ("Oh dear, you don't have enough attribute points for that! Your name IS " + name + ", after all. Please select again! ")
                 print (" ")
                 num = num + ent
             else:
@@ -64,6 +65,7 @@ def Init():
     names = [0, 0, 0]
     values = [0, 0, 0]
     print (" ")
+    desmond = ["What rhymes with 'silver'?", "What rhymes with 'wolf'?", "What rhymes with 'false'?"]
     for x in range (0, 3):
         attr = att[x]
         varlist = nums2[x]
@@ -75,12 +77,13 @@ def Init():
         print (attr + ": " + majname + " plus " + minname + ".")
         print (attr + ": " + str(lvl))
         values[x] = lvl
-        namer = input("Type anything to continue. ")
+        salmon = desmond[x]
+        namer = input (salmon)
         names[x] = namer
         print (" ")
     valuez = values[:]
     val2 = valuez.sort()
-    return values
+    return values, names
 
 def Transition():
     print (" ")
@@ -430,7 +433,7 @@ def dropfunc(turncounter, word, jj, lizt, movescript, room, rim, ri1, ri2, ri3, 
         if jj == 2:
             print ("That object is not in this room! ")
         print (" ")
-        turncounter = turncounter - 10 
+        turncounter = turncounter - 1 
         return turncounter, rim, ri1, ri2, ri3, ri4, ri5, ri6, ri7, ri8, ri9, ri10
     if check == 1:
         namer = lizt[obj]
@@ -491,8 +494,8 @@ def openi (dor, bur, turncounter, values, lizt, movescript, room, rim, ri1, ri2,
                 ede = 1
                 return dor, bur, ba, ede, turncounter, values, lizt, movescript, room, rim, ri1, ri2, ri3, ri4, ri5, ri6, ri7, ri8, ri9, ri10
             if bur == 2:
-                print ("Even though you touch the stone, it does not open anymore. ")
-                print ("Now, the only thing it's good for is as a billiard ball. ")
+                print ("You try your best, but the stone will no longer open. ")
+                print ("Now, the only thing it's good for is... a game? ")
                 return dor, bur, ba, ede, turncounter, values, lizt, movescript, room, rim, ri1, ri2, ri3, ri4, ri5, ri6, ri7, ri8, ri9, ri10
         if obj == 1:
             print ("You try your best, but the envelope refuses to open... You must rely on your special skills!")
@@ -536,7 +539,6 @@ def openi (dor, bur, turncounter, values, lizt, movescript, room, rim, ri1, ri2,
                     return dor, bur, ba, ede, turncounter, values, lizt, movescript, room, rim, ri1, ri2, ri3, ri4, ri5, ri6, ri7, ri8, ri9, ri10
             else:
                 print ("What door?")
-                print (" ")
                 turncounter = turncounter - 1
                 return dor, bur, ba, ede, turncounter, values, lizt, movescript, room, rim, ri1, ri2, ri3, ri4, ri5, ri6, ri7, ri8, ri9, ri10
 
@@ -559,7 +561,7 @@ ri7 = [0, 0, 0]
 ri8 = [0, 0, 0]
 ri9 = [0, 0, 0]
 ri10 = [0, 0, 0]
-values = Init()
+values, names = Init()
 t = Transition()
 print ("You have been here before. ")
 print ("You have 40 turns. ")
@@ -661,6 +663,12 @@ while amplaying == True:
             num = 2
         print (" ")
         print ("Suddenly, the ground falls away beneath your feet and you're falling... falling... ")
+        print ("Through the mist, you see the words, words you never thought you would see. ")
+        one = names[0]
+        two = names[1]
+        three = names [2]
+        print ("Silver, " + one + " wolf, " + two + " " + three + ", false!")
+        print (" ")
         t = 0
         while t == 0:
             if num == 0:
